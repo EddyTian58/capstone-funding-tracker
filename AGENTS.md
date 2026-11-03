@@ -16,7 +16,7 @@ A team dashboard for funding opportunities: grants, startup competitions, incuba
 
 - `app/main.py`: the server
 - `app/dates.py`: `days_left()` counts the days until a deadline
-- `static/deadlines.js` and `static/deadlines.css`: empty for now
+- `static/deadlines.js` and `static/deadlines.css`: deadline labels and colours in the table
 - `TEAM_NOTES.md`: notes from the team
 - `app/sample_data.py`: the example rows. The app copies them to `data/opportunities.json` on first run.
 
@@ -35,5 +35,7 @@ A team dashboard for funding opportunities: grants, startup competitions, incuba
 - Keep the code simple. A beginner must be able to read it.
 - Don't add new libraries.
 - Plain JavaScript only. No React, no build step.
-- `days_left()` in `app/dates.py` is tested and correct. Always reuse it. Never count days another way.
-- Don't change `app/dates.py` or `tests/test_dates.py`. Other team apps use them.
+- Always use `days_left()` in `app/dates.py` to count days. Never count days another way (for example, in JavaScript).
+- `days_left()` compares dates only, not times: `0` on the deadline day, `1` the day before, `-1` the day after. Tests for this are in `tests/test_days_left_today.py`.
+- Other team apps use `app/dates.py`. Only change it to fix a real bug, add a test for the bug, and tell the team.
+- Don't change `tests/test_dates.py`. Add new tests in a new file.
