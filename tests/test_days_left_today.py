@@ -1,0 +1,15 @@
+from datetime import date, timedelta
+
+from app.dates import days_left
+
+
+def test_deadline_today_has_zero_days_left():
+    assert days_left(date.today()) == 0
+
+
+def test_deadline_tomorrow_has_one_day_left():
+    assert days_left(date.today() + timedelta(days=1)) == 1
+
+
+def test_deadline_yesterday_has_minus_one_day_left():
+    assert days_left(date.today() - timedelta(days=1)) == -1
