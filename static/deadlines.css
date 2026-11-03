@@ -1,1 +1,19 @@
-/* Styles for deadlines.js. Empty for now. */
+/* Styles for deadlines.js. */
+
+/* The small text under the date, like "Overdue" or "Due in 3 days". */
+.deadline-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Late deadlines: red. */
+.deadline-overdue {
+  background: #fdecec;
+  color: #991b1b;
+}
+
+/* Deadlines today or in the next 7 days: yellow. */
+.deadline-soon {
+  background: #fef9c3;
+  color: #854d0e;
+}
