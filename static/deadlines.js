@@ -9,15 +9,13 @@ function showDeadline(row, cell, opportunity) {
   }
 
   const badge = document.createElement("div");
-  badge.className = "deadline-label";
   badge.textContent = label;
-  cell.appendChild(badge);
-
   if (opportunity.days_left < 0) {
-    cell.classList.add("deadline-overdue");
+    badge.className = "deadline-label deadline-overdue";
   } else {
-    cell.classList.add("deadline-soon");
+    badge.className = "deadline-label deadline-soon";
   }
+  cell.appendChild(badge);
 }
 
 // Turns days_left into the text we show under the date.

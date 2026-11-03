@@ -2,6 +2,11 @@
 
 /* The small text under the date, like "Overdue" or "Due in 3 days". */
 .deadline-label {
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 600;
 }
